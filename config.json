@@ -76,19 +76,23 @@
             "fields": [
                 {
                     "name": "First Name",
-                    "id": "firstName"
+                    "id": "firstName",
+                    "type": "text"
                 },
                 {
                     "name": "Last Name",
-                    "id": "lastName"
+                    "id": "lastName",
+                    "type": "text"
                 },
                 {
                     "name": "Email",
-                    "id": "email"
+                    "id": "email",
+                    "type": "email"
                 },
                 {
                     "name": "Message",
-                    "id": "message"
+                    "id": "message",
+                    "type": "text"
                 }
             ]
         }

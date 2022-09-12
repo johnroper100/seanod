@@ -8,6 +8,24 @@
             </div>
         </div>
         <div class="row">
+            <?php 
+                if (isset($_GET['error'])) {
+                    $isError = (bool)$_GET['error'];
+                } else {
+                    $isError = false;
+                }
+                
+                if (isset($_GET['success'])) {
+                    $isSuccess = (bool)$_GET['success'];
+                } else {
+                    $isSuccess = false;
+                }
+            if ($isError) { ?>
+                <div class="alert alert-danger" role="alert">Form could not be submitted. Please try again.</div>
+            <?php }
+            if ($isSuccess) { ?>
+                <div class="alert alert-success" role="alert">Form submitted successfully. We will be in touch soon.</div>
+            <?php } ?>
             <div class="col-md-8 probootstrap-animate">
                 <form action="<?php echo BASEPATH; ?>/form/contact" method="post" class="probootstrap-form mb60">
                     <div class="row">
@@ -31,6 +49,10 @@
                     <div class="form-group">
                         <label for="message">Message</label>
                         <textarea cols="30" rows="10" class="form-control" id="message" name="message"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="math">What does 1 + 4 equal?</label>
+                        <input type="math" class="form-control" id="math" name="math">
                     </div>
                     <div class="form-group">
                         <input type="submit" class="btn btn-primary" id="submit" name="submit" value="Send Message">

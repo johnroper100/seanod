@@ -17,7 +17,7 @@
                 <div class="col-md-8 probootstrap-animate" data-animate-effect="fadeIn">
                     <?php $imageDetails = getMedia($newsItem["content"]["featuredImage"]); ?>
                     <a href="<?php echo BASEPATH . '/' . $newsItem["collectionSubpath"] . '/' . $newsItem["path"]; ?>" class="img-bg"
-                        style="background-blend-mode: multiply; background: rgba(0, 0, 0, 0.45); background-size: cover; background-position: center; background-image: url('<?php echo BASEPATH; ?>/uploads/<?php echo $imageDetails["file"]; ?>');">
+                        style="background-blend-mode: multiply; background: rgba(0, 0, 0, 0.45); background-size: cover; background-position: center; background-image: url('<?php echo BASEPATH; ?>/uploads/<?php echo $imageDetails["fileSmall"]; ?>');">
                         <div class="probootstrap-photo-details">
                             <h2>Latest News:</h2>
                             <p><?php echo $newsItem["title"]; ?></p>
@@ -29,7 +29,7 @@
                 <div class="col-md-4 probootstrap-animate" data-animate-effect="fadeIn">
                     <?php $imageDetails = getMedia($portfolioItem["content"]["featuredImage"]); ?>
                     <a href="<?php echo BASEPATH . '/' . $portfolioItem["collectionSubpath"] . '/' . $portfolioItem["path"]; ?>" class="img-bg"
-                        style="background-blend-mode: multiply; background: rgba(0, 0, 0, 0.45); background-size: cover; background-position: center; background-image: url('<?php echo BASEPATH; ?>/uploads/<?php echo $imageDetails["file"]; ?>');">
+                        style="background-blend-mode: multiply; background: rgba(0, 0, 0, 0.45); background-size: cover; background-position: center; background-image: url('<?php echo BASEPATH; ?>/uploads/<?php echo $imageDetails["fileSmall"]; ?>');">
                         <div class="probootstrap-photo-details">
                             <h2><?php echo $portfolioItem["title"]; ?></h2>
                             <p><?php echo $portfolioItem["content"]["headerSubtitle"]; ?></p>
@@ -42,7 +42,7 @@
             <?php foreach($page["content"]["associateImages"] as $assocItem) { ?>
                 <div class="col-12 col-md-3">
                     <?php $imageDetails = getMedia($assocItem["image"]); ?>
-                    <a class="img-bg" href="<?php echo $assocItem["link"]; ?>" target="_blank" style="background-size: contain; max-width: 60%; margin: 0 auto; background-image: url('<?php echo BASEPATH; ?>/uploads/<?php echo $imageDetails["file"]; ?>');"></a>
+                    <a class="img-bg" href="<?php echo $assocItem["link"]; ?>" target="_blank" style="background-size: contain; max-width: 60%; margin: 0 auto; background-image: url('<?php echo BASEPATH; ?>/uploads/<?php echo $imageDetails["fileSmall"]; ?>');"></a>
                 </div>
             <?php }; ?>
         </div>
