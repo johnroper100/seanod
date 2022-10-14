@@ -26,7 +26,7 @@
             if ($isSuccess) { ?>
                 <div class="alert alert-success" role="alert">Form submitted successfully. We will be in touch soon.</div>
             <?php } ?>
-            <div class="col-md-8 probootstrap-animate">
+            <div class="col-md-12 probootstrap-animate">
                 <form action="<?php echo BASEPATH; ?>/form/contact" method="post" class="probootstrap-form mb60">
                     <div class="row">
                         <div class="col-md-6">
@@ -58,20 +58,6 @@
                         <input type="submit" class="btn btn-primary" id="submit" name="submit" value="Send Message">
                     </div>
                 </form>
-            </div>
-            <div class="col-md-3 col-md-push-1 probootstrap-animate">
-                <h4>Contact Details</h4>
-                <ul class="with-icon colored">
-                    <?php if ($page["content"]["address"] != "" ) { ?>
-                    <li><i class="icon-location2"></i> <span><?php echo $page["content"]["address"]; ?></span></li>
-                    <?php }; ?>
-                    <?php if ($page["content"]["email"] != "" ) { ?>
-                    <li><i class="icon-mail"></i><span><?php echo $page["content"]["email"]; ?></span></li>
-                    <?php }; ?>
-                    <?php if ($page["content"]["phone"] != "" ) { ?>
-                    <li><i class="icon-phone2"></i><span>+<?php echo $page["content"]["phone"]; ?></span></li>
-                    <?php }; ?>
-                </ul>
             </div>
         </div>
     </div>
