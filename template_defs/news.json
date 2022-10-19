@@ -1,5 +1,6 @@
 {
     "name": "News",
+    "isPathless": false,
     "sections": [
         {
             "name": "Header",
