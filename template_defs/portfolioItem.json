@@ -1,5 +1,6 @@
 {
     "name": "Portfolio Item",
+    "isPathless": false,
     "sections": [
         {
             "name": "Header",
