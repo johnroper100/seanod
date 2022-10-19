@@ -15,16 +15,16 @@
                 <p><?php echo $page["content"]["headerSubtitle"]; ?></p>
             </div>
             <div class="col-md-12">
-                <?php echo $page["content"]["pageContent"]; ?>
+                <?php if (isset($page["content"]["pageContent"])) { echo $page["content"]["pageContent"]; } ?>
             </div>
         </div>
         <div class="row grid" data-masonry='{"percentPosition": true }' style="margin-top: 1.5rem;">
-            <?php foreach ($page["content"]["additionalImages"] as $imageItem) { ?>
+            <?php if (isset($page["content"]["additionalImages"])) { foreach ($page["content"]["additionalImages"] as $imageItem) { ?>
                 <div class="col-md-6 grid-item">
                     <?php $imageDetails = getMedia($imageItem["image"]); ?>
                     <p><a href="<?php echo BASEPATH; ?>/uploads/<?php echo $imageDetails["file"]; ?>" class="image-popup"><img src="<?php echo BASEPATH; ?>/uploads/<?php echo $imageDetails["fileSmall"]; ?>" class="img-responsive"></a></p>
                 </div>
-            <?php } ?>
+            <?php } } ?>
         </div>
     </div>
 </div>
