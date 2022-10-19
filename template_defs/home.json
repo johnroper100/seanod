@@ -1,5 +1,6 @@
 {
     "name": "Home",
+    "isPathless": false,
     "sections": [
         {
             "name": "Header",
