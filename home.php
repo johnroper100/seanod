@@ -39,12 +39,12 @@
             <?php }; ?>
         </div>
         <div class="row mb-3">
-            <?php foreach($page["content"]["associateImages"] as $assocItem) { ?>
+            <?php if (isset($page["content"]["associateImages"])) { foreach($page["content"]["associateImages"] as $assocItem) { ?>
                 <div class="col-12 col-md-3">
                     <?php $imageDetails = getMedia($assocItem["image"]); ?>
                     <a class="img-bg" href="<?php echo $assocItem["link"]; ?>" target="_blank" style="background-size: contain; max-width: 60%; margin: 0 auto; background-image: url('<?php echo BASEPATH; ?>/uploads/<?php echo $imageDetails["fileSmall"]; ?>');"></a>
                 </div>
-            <?php }; ?>
+            <?php }; }; ?>
         </div>
     </div>
 </div>
