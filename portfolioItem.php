@@ -22,7 +22,7 @@
             <?php if (isset($page["content"]["additionalImages"])) { foreach ($page["content"]["additionalImages"] as $imageItem) { ?>
                 <div class="col-md-6 grid-item">
                     <?php $imageDetails = getMedia($imageItem["image"]); ?>
-                    <p><a href="<?php echo BASEPATH; ?>/uploads/<?php echo $imageDetails["file"]; ?>" class="image-popup"><img src="<?php echo BASEPATH; ?>/uploads/<?php echo $imageDetails["fileSmall"]; ?>" class="img-responsive"></a></p>
+                    <p><a href="<?php echo BASEPATH; ?>/uploads/<?php echo $imageDetails["file"]; ?>" class="image-popup"><img src="<?php echo BASEPATH; ?>/uploads/<?php echo $imageDetails["file"]; ?>" class="img-responsive"></a></p>
                 </div>
             <?php } } ?>
         </div>
