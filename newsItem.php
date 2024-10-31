@@ -1,7 +1,7 @@
 <?php include 'header.php'; ?>
 <div class="probootstrap-section">
     <div class="container">
-        <?php if ($page["content"]["featuredImage"] != "" ) { ?>
+        <?php if (isset($page["content"]["featuredImage"]) && $page["content"]["featuredImage"] != "" ) { ?>
         <div class="row probootstrap-gutter16">
             <div class="col-12">
                 <?php $imageDetails = getMedia($page["content"]["featuredImage"]); ?>

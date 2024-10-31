@@ -13,7 +13,7 @@
         </div>
 
         <div class="row probootstrap-gutter16">
-            <?php foreach(getPages("newsItems", 1) as $newsItem) { ?>
+            <?php foreach(getPages("newsItems", 1) as $newsItem) { if (isset($newsItem["content"]["featuredImage"])) { ?>
                 <div class="col-md-8 probootstrap-animate" data-animate-effect="fadeIn">
                     <?php $imageDetails = getMedia($newsItem["content"]["featuredImage"]); ?>
                     <a href="<?php echo BASEPATH . '/' . $newsItem["collectionSubpath"] . '/' . $newsItem["path"]; ?>" class="img-bg"
@@ -24,8 +24,8 @@
                         </div>
                     </a>
                 </div>
-            <?php }; ?>
-            <?php foreach(getPages("portfolioItems", 0) as $portfolioItem) { ?>
+            <?php }; }; ?>
+            <?php foreach(getPages("portfolioItems", 0) as $portfolioItem) { if (isset($portfolioItem["content"]["featuredImage"])) { ?>
                 <div class="col-md-4 probootstrap-animate" data-animate-effect="fadeIn">
                     <?php $imageDetails = getMedia($portfolioItem["content"]["featuredImage"]); ?>
                     <a href="<?php echo BASEPATH . '/' . $portfolioItem["collectionSubpath"] . '/' . $portfolioItem["path"]; ?>" class="img-bg"
@@ -36,7 +36,7 @@
                         </div>
                     </a>
                 </div>
-            <?php }; ?>
+            <?php }; }; ?>
         </div>
         <div class="row mb-3">
             <?php if (isset($page["content"]["associateImages"])) { foreach($page["content"]["associateImages"] as $assocItem) { ?>

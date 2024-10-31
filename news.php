@@ -13,7 +13,7 @@
         </div>
 
         <div class="row probootstrap-gutter16">
-            <?php foreach(getPages("newsItems", 0) as $newsItem) { ?>
+            <?php foreach(getPages("newsItems", 0) as $newsItem) { if(isset($newsItem["content"]["featuredImage"])) {?>
                 <div class="col-md-4 probootstrap-animate" data-animate-effect="fadeIn">
                     <?php $imageDetails = getMedia($newsItem["content"]["featuredImage"]); ?>
                     <a href="<?php echo BASEPATH . '/' . $newsItem["collectionSubpath"] . '/' . $newsItem["path"]; ?>" class="img-bg"
@@ -24,7 +24,7 @@
                         </div>
                     </a>
                 </div>
-            <?php }; ?>
+            <?php };}; ?>
         </div>
     </div>
 </div>
