@@ -7,14 +7,17 @@ $currentSiteTitle = isset($siteTitle) ? $siteTitle : "";
         <div class="row">
             <div class="col-md-12">
                 <p class="probootstrap-copyright">&copy; <?php echo date("Y"); ?> <?php echo $currentSiteTitle; ?> - All Rights Reserved.</p>
-                <ul class="probootstrap-main-nav" style="float: right;">
-                    <?php
-                        $menuItems = getMenuItems('header');
-                        foreach ($menuItems as $menuItem) {
-                    ?>
-                    <li><a style="color: #5068A9;" href="<?php echo BASEPATH . '/' . $menuItem['link']; ?>" <?php if ($menuItem['type'] == 1) { ?>target="_blank"<?php } ?>><?php echo $menuItem['name']; ?></a></li>
-                    <?php }; ?>
-                </ul>
+                <?php
+                    echo renderMenu('header', [
+                        'listClass' => 'probootstrap-main-nav',
+                        'listAttributes' => [
+                            'style' => 'float: right;'
+                        ],
+                        'linkAttributes' => [
+                            'style' => 'color: #5068A9;'
+                        ]
+                    ]);
+                ?>
             </div>
         </div>
     </div>

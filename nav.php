@@ -11,14 +11,13 @@ $currentPageId = isset($page["_id"]) ? $page["_id"] : null;
         <div class="mobile-menu-overlay"></div>
 
         <nav role="navigation" class="probootstrap-nav hidden-xs">
-          <ul class="probootstrap-main-nav">
-            <?php
-                $menuItems = getMenuItems('header');
-                foreach ($menuItems as $menuItem) {
-            ?>
-            <li <?php if ($currentPageId !== null && $menuItem['type'] == 0 && $menuItem['page'] == $currentPageId) { ?>class="active"<?php }; ?>><a href="<?php echo BASEPATH . '/' . $menuItem['link']; ?>" <?php if ($menuItem['type'] == 1) { ?>target="_blank"<?php } ?>><?php echo $menuItem['name']; ?></a></li>
-            <?php }; ?>
-          </ul>
+          <?php
+            echo renderMenu('header', [
+                'currentPageID' => $currentPageId,
+                'listClass' => 'probootstrap-main-nav',
+                'activeItemClass' => 'active'
+            ]);
+          ?>
         </nav>
     </div>
   </header>
