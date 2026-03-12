@@ -1,12 +1,21 @@
 <?php
 $currentSiteTitle = isset($siteTitle) ? $siteTitle : "";
+$currentFooterText = isset($footerText) ? $footerText : "";
+$currentCopyrightText = isset($copyrightText) ? $copyrightText : "";
+$renderedFooterText = renderSiteTextTemplate($currentFooterText, ['siteTitle' => $currentSiteTitle]);
+$renderedCopyrightText = renderSiteTextTemplate($currentCopyrightText, ['siteTitle' => $currentSiteTitle]);
 ?>
 
 <footer class="probootstrap-footer" role="contentinfo">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <p class="probootstrap-copyright">&copy; <?php echo date("Y"); ?> <?php echo $currentSiteTitle; ?> - All Rights Reserved.</p>
+                <?php if ($renderedFooterText !== "") { ?>
+                    <p class="mb-1"><?php echo nl2br(htmlspecialchars($renderedFooterText, ENT_QUOTES, 'UTF-8')); ?></p>
+                <?php } ?>
+                <?php if ($renderedCopyrightText !== "") { ?>
+                    <p class="probootstrap-copyright">&copy; <?php echo nl2br(htmlspecialchars($renderedCopyrightText, ENT_QUOTES, 'UTF-8')); ?></p>
+                <?php } ?>
                 <?php
                     echo renderMenu('header', [
                         'listClass' => 'probootstrap-main-nav',

@@ -9,7 +9,7 @@ $currentSiteTitle = isset($siteTitle) ? $siteTitle : "";
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?php echo $currentSiteTitle; ?><?php if ($pageTitle !== "") { echo " - " . $pageTitle; } ?></title>
+    <title><?php echo htmlspecialchars($currentSiteTitle, ENT_QUOTES, 'UTF-8'); ?><?php if ($pageTitle !== "") { echo " - " . htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8'); } ?></title>
     <meta name="description" content="Free Bootstrap Theme by uicookies.com">
     <meta name="keywords"
         content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">
