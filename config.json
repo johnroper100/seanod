@@ -48,6 +48,7 @@
             "id": "portfolioItems",
             "icon": "fa-images",
             "subpath": "portfolio",
+            "sort": "custom",
             "allowed_templates": [
                 "portfolioItem"
             ]
@@ -57,6 +58,7 @@
             "id": "newsItems",
             "icon": "fa-newspaper",
             "subpath": "news",
+            "sort": "newest",
             "allowed_templates": [
                 "newsItem"
             ]
