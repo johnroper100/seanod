@@ -1,8 +1,12 @@
+<?php
+$currentSiteTitle = isset($siteTitle) ? $siteTitle : "";
+?>
+
 <footer class="probootstrap-footer" role="contentinfo">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <p class="probootstrap-copyright">&copy; <?php echo date("Y"); ?> <?php echo $siteTitle; ?> - All Rights Reserved.</p>
+                <p class="probootstrap-copyright">&copy; <?php echo date("Y"); ?> <?php echo $currentSiteTitle; ?> - All Rights Reserved.</p>
                 <ul class="probootstrap-main-nav" style="float: right;">
                     <?php
                         $menuItems = getMenuItems('header');

@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php
+$pageTitle = isset($page["title"]) ? $page["title"] : "";
+$currentSiteTitle = isset($siteTitle) ? $siteTitle : "";
+?>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title><?php echo $siteTitle; ?> - <?php echo $page["title"]; ?></title>
+    <title><?php echo $currentSiteTitle; ?><?php if ($pageTitle !== "") { echo " - " . $pageTitle; } ?></title>
     <meta name="description" content="Free Bootstrap Theme by uicookies.com">
     <meta name="keywords"
         content="free website templates, free bootstrap themes, free template, free bootstrap, free website template">

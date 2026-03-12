@@ -1,10 +1,15 @@
+<?php
+$pageTitle = isset($page["title"]) ? $page["title"] : "Contact";
+$pageSubtitle = isset($page["content"]["headerSubtitle"]) ? $page["content"]["headerSubtitle"] : "";
+?>
+
 <?php include 'header.php'; ?>
 <section class="probootstrap-section">
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-md-offset-3 mb80 text-center probootstrap-animate">
-                <h2><?php echo $page["title"]; ?></h2>
-                <p><?php echo $page["content"]["headerSubtitle"]; ?></p>
+                <h2><?php echo $pageTitle; ?></h2>
+                <p><?php echo $pageSubtitle; ?></p>
             </div>
         </div>
         <div class="row">
